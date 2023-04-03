@@ -203,7 +203,14 @@ Public Sub wrSafe()
     End If
 
 
-    
+     
+    For y = 1 To newRecord
+        'Debug.Print CStr(glCodeArr(y)) & " | " & CStr(incomeCodeArr(y)) & " | " & CStr(activityArr(y)) & " | " & CStr(totalSum(y))
+        ActiveReportSheet.Range("B" & nextNagudhuRecord + y).Value = glCodeArr(y)
+        ActiveReportSheet.Range("C" & nextNagudhuRecord + y).Value = incomeCodeArr(y)
+        ActiveReportSheet.Range("D" & nextNagudhuRecord + y).Value = activityArr(y)
+        ActiveReportSheet.Range("K" & nextNagudhuRecord + y).Value = totalSum(y)
+    Next y
 
     For z = 10 To nextRecord
 
@@ -221,14 +228,7 @@ Public Sub wrSafe()
             End If
     Next z
 
-    
-    For y = 1 To newRecord
-        'Debug.Print CStr(glCodeArr(y)) & " | " & CStr(incomeCodeArr(y)) & " | " & CStr(activityArr(y)) & " | " & CStr(totalSum(y))
-        ActiveReportSheet.Range("B" & nextNagudhuRecord + y).Value = glCodeArr(y)
-        ActiveReportSheet.Range("C" & nextNagudhuRecord + y).Value = incomeCodeArr(y)
-        ActiveReportSheet.Range("D" & nextNagudhuRecord + y).Value = activityArr(y)
-        ActiveReportSheet.Range("K" & nextNagudhuRecord + y).Value = totalSum(y)
-    Next y
+   
 
     'SafeData.Close SaveChanges:=False
     'SafeData.Close SaveChanges:=True
