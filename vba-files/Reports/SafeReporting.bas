@@ -75,7 +75,7 @@ Public Sub newReport()
 
   If IsDate(startDate) Then
       ' Do something with the date
-      MsgBox startDate
+    '   MsgBox startDate
   Else
       ' Handle invalid input
       MsgBox "Date should be in DD/MM/YYYY eg: 01/12/2023"
